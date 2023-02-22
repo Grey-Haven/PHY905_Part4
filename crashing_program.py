@@ -34,7 +34,7 @@ def deriv(f,x,h,points):
     if points==3:
         return (f(x+h)-f(x-h))/(2.0*h)
     if points==5:
-        five_point = (-f(x-2.0*h)-8.0*f(x-h)+8.0*f(x+h)+f(x+2.0*h))/(12.0*h)
+        five_point = (f(x-2.0*h)-8.0*f(x-h)+8.0*f(x+h)-f(x+2.0*h))/(12.0*h)
         return five_point
     print("ERROR: deriv() cannot handle this many points:", points, flush=True)
     raise Exception("ERROR: deriv() cannot handle this many points:" + str(points))
